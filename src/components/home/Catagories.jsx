@@ -11,10 +11,10 @@ const Catagories = () => {
   }, []);
 
   return (
-    <div className="w-full grid grid-cols-8 gap-3 py-5 px-2">
+    <div className="w-full grid grid-cols-4 md:grid-cols-8 gap-3 py-5 px-2">
       {data.length > 0 &&
         data.map((category, index) => (
-          <div className="flex flex-col h-32 w-32 justify-center items-center p-3 rounded-full bg-lime-200" key={index}>
+          <div className="flex flex-col h-32 w-32 justify-center items-center p-3 rounded-full bg-lime-200 hover:bg-lime-400 transition-all duration-500 ease-linear cursor-pointer" key={index}>
             <img
               src={category.image}
               alt={category.name}

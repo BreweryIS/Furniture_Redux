@@ -1,6 +1,7 @@
 import React from "react";
 import HeroSlider from "../components/home/HeroSlider";
 import Catagories from "../components/home/Catagories";
+import FeaturedProducts from "../components/home/FeaturedProducts";
 
 const Home = () => {
   return (
@@ -8,13 +9,21 @@ const Home = () => {
       <div className="w-full">
         <HeroSlider />
       </div>
-      <div className="w-11/12">
-      <div className="title_container">
-        <h1 className="title font-bold">
-          Find Your Style:Furniture Categories
-        </h1>
-      </div>
+      <div className="w-11/12 p-5">
+        <div className="title_container p-2">
+          <h1 className="title font-bold text-3xl">
+            Find Your Style:Furniture Categories
+          </h1>
+        </div>
         <Catagories />
+      </div>
+      <div className="w-11/12 p-5">
+        <div className="title_container p-2">
+          <h1 className="title font-bold text-3xl text-center">
+            Discover Our FeaturedProducts
+          </h1>
+        </div>
+        <FeaturedProducts />
       </div>
     </div>
   );
