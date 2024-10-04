@@ -45,7 +45,7 @@ const HeroSlider = () => {
                 </p>
 
                 <Link to={slide.link}>
-                  <button className="font-bold bg-lime-400 py-3 px-5 text-sm hover:bg-lime-600 transition ease-in duration-200">{slide.buttonText}</button>
+                  <button className="rounded-md font-bold bg-lime-400 py-3 px-5 text-sm hover:bg-lime-600 transition ease-in duration-200">{slide.buttonText}</button>
                 </Link>
               </div>
             </SwiperSlide>

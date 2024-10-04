@@ -3,32 +3,41 @@ import ProductCard from "../ProductCard";
 
 const FeaturedProducts = () => {
   const [data, setData] = useState([]);
-  const [error, setError] = useState(null);
+
+  // useEffect(() => {
+  //   fetch("./img/Products/products.json")
+  //     .then((res) => res.json())
+  //     .then((data) => setData(data.products))
+  //     .catch((error) => console.log(error));
+  // }, []);
+
   useEffect(() => {
     const fetchFeaturedProducts = async () => {
       try {
-        const response = await fetch("./img/Products/products.json");
-        if (!response.ok) {
-          throw new Error("Failed to fetch data");
-        }
-        const data = await response.json();
-        setData(data);
+        const res = await fetch("./img/Products/products.json");
+        const data = await res.json();
+        setData(data.products);
       } catch (error) {
-        setError(error.message);
         console.error("Error fetching data:", error);
       }
     };
+
     fetchFeaturedProducts();
   }, []);
-  console.log(data);
+
   return (
-    <div className="w-full">
-      {data &&
-        data.products.map((product) => (
+    <div className="w-full grid grid-cols-3 gap-4 py-4">
+      {data ? 
+        data.slice(0,6).map((product) => (
           <div key={product.id}>
-            <ProductCard />
+            <ProductCard product={product}  />
           </div>
-        ))}
+        ))
+       : (
+        <div>
+          <h3>...Loading</h3>
+        </div>
+      )}
     </div>
   );
 };
