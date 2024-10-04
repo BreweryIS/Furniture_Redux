@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ProductCard from "../ProductCard";
 import { FaArrowRight } from "react-icons/fa";
 
-const FeaturedProducts = () => {
+const BestSeller = () => {
   const [data, setData] = useState([]);
 
   // useEffect(() => {
@@ -13,7 +13,7 @@ const FeaturedProducts = () => {
   // }, []);
 
   useEffect(() => {
-    const fetchFeaturedProducts = async () => {
+    const fetchBestSeller = async () => {
       try {
         const res = await fetch("./img/Products/products.json");
         const data = await res.json();
@@ -23,21 +23,21 @@ const FeaturedProducts = () => {
       }
     };
 
-    fetchFeaturedProducts();
+    fetchBestSeller();
   }, []);
 
   return (
     <>
       <div className="w-full grid grid-cols-3 gap-4 py-4">
         {data ? (
-          data.slice(0, 6).map((product) => (
+          data.slice(3, 9).map((product) => (
             <div key={product.id}>
               <ProductCard product={product} />
             </div>
           ))
         ) : (
           <div>
-            <h3>...Loading</h3>
+            <h3>Loading...</h3>
           </div>
         )}
       </div>
@@ -51,4 +51,4 @@ const FeaturedProducts = () => {
   );
 };
 
-export default FeaturedProducts;
+export default BestSeller;
