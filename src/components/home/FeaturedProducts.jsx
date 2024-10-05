@@ -17,6 +17,9 @@ const FeaturedProducts = () => {
       try {
         const res = await fetch("./img/Products/products.json");
         const data = await res.json();
+        if (!res.ok) {
+          return console.log("Failed to fetch data");
+        }
         setData(data.products);
       } catch (error) {
         console.error("Error fetching data:", error);

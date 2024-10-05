@@ -16,7 +16,7 @@ const Footer = () => {
           </p>
         </div>
         <div className="col flex-1">
-          <h1 className="font-bold title py-2">Quick Link</h1>
+          <h1 className="font-bold title py-2 text-2xl">Quick Links</h1>
           <ul className="flex flex-col gap-3 w-fit">
             <li className="font-bold hover:text-lime-400 cursor-pointer">
               Home
@@ -33,7 +33,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="col flex-1">
-          <h1 className="font-bold title py-2">Terms & Conditions</h1>
+          <h1 className="font-bold title py-2 text-2xl">Terms & Conditions</h1>
           <ul className="flex flex-col gap-3 w-fit">
             <li className="font-bold hover:text-lime-400 cursor-pointer">
               Privay Policy
@@ -44,7 +44,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="col flex-1">
-          <h1 className="font-bold title py-2">Social Links</h1>
+          <h1 className="font-bold title py-2 text-2xl">Social Links</h1>
           <ul className="flex gap-3 text-2xl w-fit">
             <li className="font-bold hover:text-lime-400 cursor-pointer">
               <button className="p-3 bg-lime-400 hover:bg-lime-500 transition-all ease-linear duration-300 rounded-sm hover:text-white">
