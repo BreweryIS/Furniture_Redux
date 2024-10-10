@@ -23,7 +23,7 @@ const Navbar = () => {
     },
   ];
   return (
-    <div className="w-full flex justify-center py-4 items-center">
+    <div className="w-full flex justify-center py-4 items-center shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
       <div className="w-10/12 flex justify-center py-4 px-2 items-center">
         <div className="flex-1">
           <h1 className="logo font-bold text-2xl">Furniture</h1>
