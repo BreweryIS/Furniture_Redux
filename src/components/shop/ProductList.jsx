@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "../ProductCard";
+import SortDropDown from "./SortDropDown";
 
 const ProductList = () => {
+  const [initialProducts, setInitialProducts] = useState([]);
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -12,7 +14,8 @@ const ProductList = () => {
         if (!res.ok) {
           return console.log("Failed to fetch data");
         }
-        setData(data.products);
+        setData(data.products)
+        setInitialProducts(data.products);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -22,19 +25,24 @@ const ProductList = () => {
   }, []);
 
   return (
-    <div className="w-full grid grid-cols-3 gap-4 py-4">
-      {data ? (
-        data.map((product) => (
-          <div key={product.id}>
-            <ProductCard product={product} />
+    <>
+      <div className="flex justify-end items-center w-full">
+        <SortDropDown products={initialProducts} SortedData={setData} />
+      </div>
+      <div className="w-full grid grid-cols-3 gap-4 py-4">
+        {data ? (
+          data.map((product) => (
+            <div key={product.id}>
+              <ProductCard product={product} />
+            </div>
+          ))
+        ) : (
+          <div>
+            <h3>...Loading</h3>
           </div>
-        ))
-      ) : (
-        <div>
-          <h3>...Loading</h3>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
+    </>
   );
 };
 
