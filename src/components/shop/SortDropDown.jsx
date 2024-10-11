@@ -5,30 +5,31 @@ const SortDropDown = ({ products, SortedData }) => {
   const handleSortChange = (e) => {
     const value = e.target.value;
     setSortDropDown(value);
-  };
 
-  let sortedProducts = [...products];
-  switch (value) {
-    case "price-asc":
-      sortedProducts.sort((a, b) => a.price - b.price);
-      break;
-    case "price-desc":
-      sortedProducts.sort((a, b) => b.price - a.price);
-      break;
-    case "name-asc":
-      sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
-      break;
-    case "name-desc":
-      sortedProducts.sort((a, b) => b.name.localeCompare(a.name));
-      break;
-    default:
-      break;
-  }
-  SortedData(sortedProducts);
+    let sortedProducts = [...products];
+    switch (value) {
+      case "price-asc":
+        sortedProducts.sort((a, b) => a.price - b.price);
+        break;
+      case "price-desc":
+        sortedProducts.sort((a, b) => b.price - a.price);
+        break;
+      case "name-asc":
+        sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      case "name-desc":
+        sortedProducts.sort((a, b) => b.name.localeCompare(a.name));
+        break;
+      default:
+        break;
+    }
+    SortedData(sortedProducts);
+  };
 
   return (
     <div>
       <select
+      className="focus:outline-none border border-gray-200 py-2 px-3 rounded-md bg-white"
         name="sortDropDown"
         id="sortDropDown"
         value={sortDropDown}

@@ -23,7 +23,7 @@ const ProductCard = ({ product }) => {
       <div className="py-3 px-3">
         <div className="flex justify-between items-center">
           <h1 className="font-bold">{product.name}</h1>
-          <h4 className="font-bold text-lime-600">${product.price}</h4>
+          <h4 className="font-bold text-lime-600">$ {product.price}</h4>
         </div>
       </div>
     </div>

@@ -14,7 +14,7 @@ const ProductList = () => {
         if (!res.ok) {
           return console.log("Failed to fetch data");
         }
-        setData(data.products)
+        setData(data.products);
         setInitialProducts(data.products);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -30,7 +30,7 @@ const ProductList = () => {
         <SortDropDown products={initialProducts} SortedData={setData} />
       </div>
       <div className="w-full grid grid-cols-3 gap-4 py-4">
-        {data ? (
+        {data.length > 0 ? (
           data.map((product) => (
             <div key={product.id}>
               <ProductCard product={product} />

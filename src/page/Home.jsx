@@ -43,9 +43,6 @@ const Home = () => {
       <div className="w-11/12 py-5">
         <Newsletter />
       </div>
-      <div className="w-full bg-gray-100">
-        <Footer />
-      </div>
     </div>
   );
 };
