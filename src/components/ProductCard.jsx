@@ -18,7 +18,7 @@ const ProductCard = ({ product }) => {
           <button className="bg-lime-200  hover:bg-lime-400 transition-all duration-500 ease-linear p-3 rounded-full">
             <FaRegEye />
           </button>
-        </div>
+        </div>  
       </div>
       <div className="py-3 px-3">
         <div className="flex justify-between items-center">

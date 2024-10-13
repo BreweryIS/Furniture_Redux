@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { RiShoppingCartLine } from "react-icons/ri";
-import { FaRegHeart } from "react-icons/fa";
+import CardOffset from "./CardOffset";
+import Wishlistoffset from "./Wishlistoffset";
 
 const Navbar = () => {
   const navitems = [
@@ -38,8 +38,8 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex-1 flex text-xl gap-2 justify-end items-center">
-          <FaRegHeart />
-          <RiShoppingCartLine />
+          <Wishlistoffset />
+          <CardOffset />
         </div>
       </div>
     </div>
