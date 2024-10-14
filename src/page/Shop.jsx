@@ -1,6 +1,5 @@
 import React from "react";
 import ProductList from "../components/shop/ProductList";
-import SortDropDown from "../components/shop/SortDropDown";
 
 const Shop = () => {
   return (
