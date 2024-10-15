@@ -1,13 +1,21 @@
 import React from "react";
 import { FaRegEye, FaRegHeart } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../slices/cartSlice";
 
 const ProductCard = ({ product }) => {
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(product));
+  };
+
   return (
     <div className="w-full group h-full cursor-pointer">
       <div className="relative overflow-hidden rounded-xl">
         <img src={product.images[0]} alt={product.name} />
         <div className="absolute -bottom-20 w-full group-hover:bottom-2 transition-all duration-500 ease-in-out">
-          <button className="w-11/12 block mx-auto mx-auto bg-lime-200 hover:bg-lime-400 transition-all duration-500 ease-linear py-2">
+          <button onClick={handleAddToCart} className="w-11/12 block mx-auto mx-auto bg-lime-200 hover:bg-lime-400 transition-all duration-500 ease-linear py-2">
             Add to Cart
           </button>
         </div>
@@ -18,7 +26,7 @@ const ProductCard = ({ product }) => {
           <button className="bg-lime-200  hover:bg-lime-400 transition-all duration-500 ease-linear p-3 rounded-full">
             <FaRegEye />
           </button>
-        </div>  
+        </div>
       </div>
       <div className="py-3 px-3">
         <div className="flex justify-between items-center">

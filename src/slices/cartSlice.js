@@ -1,4 +1,4 @@
-const { createSlice } = require("@reduxjs/toolkit");
+import { createSlice } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
   name: "cart",
@@ -18,6 +18,7 @@ const cartSlice = createSlice({
         state.items.push({
           id: newItem.id,
           name: newItem.name,
+          image:newItem.images[0],
           price: newItem.price,
           quantity: 1,
           totalPrice: newItem.price,

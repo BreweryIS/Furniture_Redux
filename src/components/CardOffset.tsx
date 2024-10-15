@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { BsTranslate } from "react-icons/bs";
 import { IoCloseSharp } from "react-icons/io5";
 import { RiShoppingCartLine } from "react-icons/ri";
+import { useSelector } from "react-redux";
 
 const CardOffset = () => {
   const [open, setOpen] = useState(false);
+  const cartItems = useSelector((state) => state.cart.items);
+
   return (
     <div>
       <button
@@ -29,6 +32,17 @@ const CardOffset = () => {
               </button>
             </div>
           </div>
+          <div className="w-full">
+              <ul>
+                {cartItems.map((item) => (
+                  <li key={item.id}>
+                    <div className="w-24 h-24 overflow-hidden">
+                      <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
         </div>
         <div
           className={`h-full w-full bg-gray-400 z-[60] fixed top-0 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20`}
