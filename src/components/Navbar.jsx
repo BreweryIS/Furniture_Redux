@@ -37,7 +37,7 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-        <div className="flex-1 flex text-xl gap-2 justify-end items-center">
+        <div className="flex-1 flex text-xl gap-4 justify-end items-center">
           <Wishlistoffset />
           <CardOffset />
         </div>
