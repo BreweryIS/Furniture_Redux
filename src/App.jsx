@@ -4,6 +4,8 @@ import Home from "./page/Home";
 import Navbar from "./components/Navbar";
 import Shop from "./page/Shop";
 import Footer from "./components/Footer";
+import Cart from "./page/Cart";
+import Wishlist from "./page/Wishlist";
 
 const App = () => {
   return (
@@ -12,6 +14,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/wishlist" element={<Wishlist />} />
       </Routes>
       <Footer />
     </BrowserRouter>

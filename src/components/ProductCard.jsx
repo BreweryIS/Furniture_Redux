@@ -7,8 +7,10 @@ import { addToWishlist } from "../slices/wishlistSlice";
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
+  const wishlistItems = useSelector((state) => state.wishlist.items);
 
   const isInCart = cartItems.some((item) => item.id === product.id);
+  const isInWishlist = wishlistItems.some((item) => item.id === product.id);
 
   const handleAddToCart = () => {
     if (!isInCart) {
@@ -16,7 +18,9 @@ const ProductCard = ({ product }) => {
     }
   };
   const handleAddToWishlist = () => {
-    dispatch(addToWishlist(product));
+    if (!isInWishlist) {
+      dispatch(addToWishlist(product));
+    }
   };
 
   return (
@@ -38,7 +42,11 @@ const ProductCard = ({ product }) => {
         <div className="p-2 text-xl flex flex-col absolute top-2 -right-20 group-hover:right-2 transition-all duration-500 ease-in-out gap-3">
           <button
             onClick={handleAddToWishlist}
-            className="bg-lime-200 hover:bg-lime-400 transition-all duration-500 ease-linear p-3 rounded-full"
+            className={`${
+              isInWishlist
+                ? "bg-red-500 text-white"
+                : "bg-lime-200 hover:bg-lime-400"
+            }  transition-all duration-500 ease-linear p-3 rounded-full`}
           >
             <FaRegHeart />
           </button>

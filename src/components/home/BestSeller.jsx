@@ -28,7 +28,7 @@ const BestSeller = () => {
 
   return (
     <>
-      <div className="w-full grid grid-cols-3 gap-4 py-4">
+      <div className="w-full grid lg:grid-cols-3 sm:grid-cols-2 gird-cols-1 gap-4 py-4">
         {data ? (
           data.slice(3, 9).map((product) => (
             <div key={product.id}>

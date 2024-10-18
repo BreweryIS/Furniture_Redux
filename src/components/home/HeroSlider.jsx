@@ -15,16 +15,17 @@ const HeroSlider = () => {
   useEffect(() => {
     fetch("./img/Hero_Slider/slider.json")
       .then((response) => response.json())
-      .then((data) => setSlides(data))
+      .then((data) => setSlides(data.heroSlider))
       .catch((error) => console.log(`Error:`, error));
   }, []);
+  const isLoopEnabled = slides.length > 1
 
   return (
     <div className="w-full">
       <Swiper
         slidesPerView={1}
         spaceBetween={0}
-        loop={true}
+        loop={isLoopEnabled}
         // pagination={{
         //   clickable: true,
         // }}
@@ -32,8 +33,8 @@ const HeroSlider = () => {
         // modules={[Pagination, Navigation]}
         className="mySwiper"
       >
-        {slides.heroSlider &&
-          slides.heroSlider.map((slide) => (
+        {slides.length > 0 &&
+          slides.map((slide) => (
             <SwiperSlide key={slide.id} className="max-h-[90vh] relative">
               <img src={slide.image} alt={`Slide${slide.id}`} />
               <div className="text_container absolute top-[30%] text-center w-full h-full">

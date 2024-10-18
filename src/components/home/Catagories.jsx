@@ -11,7 +11,7 @@ const Catagories = () => {
   }, []);
 
   return (
-    <div className="w-full grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-8 gap-3 py-5 px-2">
+    <div className="w-full flex flex-wrap justify-center items-center gap-3 py-5 px-2">
       {data.length > 0 &&
         data.map((category, index) => (
           <div

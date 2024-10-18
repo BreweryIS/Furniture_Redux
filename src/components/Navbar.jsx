@@ -1,25 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CardOffset from "./CardOffset";
-import Wishlistoffset from "./Wishlistoffset";
+import WishlistOffset from "./WishlistOffset";
+import { IoHomeOutline } from "react-icons/io5";
+import { BsCart4, BsShop } from "react-icons/bs";
+import { FaRegHeart } from "react-icons/fa6";
 
 const Navbar = () => {
   const navitems = [
     {
       label: "Home",
       path: "/",
+      icon: <IoHomeOutline />,
     },
     {
       label: "Shop",
       path: "/shop",
+      icon: <BsShop />,
     },
     {
       label: "Cart",
       path: "/cart",
+      icon: <BsCart4 />,
     },
     {
-      label: "Whishlist",
-      path: "whishlist",
+      label: "Wishlist",
+      path: "wishlist",
+      icon: <FaRegHeart />,
     },
   ];
   return (
@@ -28,17 +35,20 @@ const Navbar = () => {
         <div className="flex-1">
           <h1 className="logo font-bold text-2xl">Furniture</h1>
         </div>
-        <div className="flex-1 flex justify-center items-center">
-          <ul className="flex gap-2 justify-center items-center">
+        <div className="sm:flex-1 sm:w-auto w-full flex sm:relative z-50 sm:py-0 py-3 fixed md:bottom-auto bottom-0 sm:bg-transparent bg-white justify-center items-center">
+          <ul className="flex gap-2 w-full sm:justify-center justify-around items-center">
             {navitems.map((item, index) => (
-              <li key={index}>
-                <Link to={item.path}>{item.label}</Link>
+              <li key={index} className="sm:bg-transparent bg-lime-400 sm:p-0 p-3 sm:rounded-none rounded-full">
+                <Link to={item.path}>
+                  <span className="sm:block hidden">{item.label}</span>
+                  <span className="sm:hidden block text-2xl">{item.icon}</span>
+                </Link>
               </li>
             ))}
           </ul>
-        </div>
+        </div>  
         <div className="flex-1 flex text-xl gap-4 justify-end items-center">
-          <Wishlistoffset />
+          <WishlistOffset />
           <CardOffset />
         </div>
       </div>

@@ -6,9 +6,9 @@ const Footer = () => {
   return (
     <>
       <div className="w-full bg-gray-100">
-        <div className="w-11/12 h-full mx-auto gap-3 px-3 py-5 flex justify-center items-center">
+        <div className="w-11/12 h-full flex flex-wrap md:flex-row flex-col mx-auto gap-3 px-3 py-5 justify-start md:justify-center items-start md:items-center">
           <div className="col flex-1">
-            <h1 className="logo font-bold text-2xl">Furniture</h1>
+            <h1 className="logo font-bold md:text-2xl text-xl">Furniture</h1>
             <p className="text-sm text-gray-500 italic py-3">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam,
               ipsum cupiditate fuga, blanditiis necessitatibus quia temporibus
@@ -17,7 +17,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="col flex-1">
-            <h1 className="font-bold title py-2 text-2xl">Quick Links</h1>
+            <h1 className="font-bold title py-2 md:text-2xl text-xl">Quick Links</h1>
             <ul className="flex flex-col gap-3 w-fit">
               <li className="font-bold hover:text-lime-400 cursor-pointer">
                 Home
@@ -34,7 +34,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="col flex-1">
-            <h1 className="font-bold title py-2 text-2xl">
+            <h1 className="font-bold title py-2 md:text-2xl text-xl">
               Terms & Conditions
             </h1>
             <ul className="flex flex-col gap-3 w-fit">
@@ -47,7 +47,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="col flex-1">
-            <h1 className="font-bold title py-2 text-2xl">Social Links</h1>
+            <h1 className="font-bold title py-2 md:text-2xl text-xl">Social Links</h1>
             <ul className="flex gap-3 text-2xl w-fit">
               <li className="font-bold hover:text-lime-400 cursor-pointer">
                 <button className="p-3 bg-lime-400 hover:bg-lime-500 transition-all ease-linear duration-300 rounded-sm hover:text-white">
@@ -67,7 +67,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="flex w-11/12 border-t border-gray-600 justify-between items-center mx-auto py-3">
+        <div className="flex sm:flex-row flex-col w-11/12 border-t border-gray-600 justify-between items-center mx-auto py-3">
           <h4 className="flex items-center gap-2 font-semibold">
             <FaRegCopyright /> All rights reserved Furniture 2024.
           </h4>
