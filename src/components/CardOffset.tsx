@@ -45,7 +45,7 @@ const CardOffset = () => {
           </div>
           <div className="w-full p-3">
             <ul>
-              {cartItems.length > 0 &&
+              {cartItems.length > 0 ?
                 cartItems.map((item) => (
                   <li
                     key={item.id}
@@ -75,7 +75,11 @@ const CardOffset = () => {
                       </div>
                     </div>
                   </li>
-                ))}
+                )):(
+                  <h1 className="text-center py-3 px-2 font-semibold">
+                    Your Cart is Empty!
+                  </h1>
+                )}
             </ul>
           </div>
         </div>

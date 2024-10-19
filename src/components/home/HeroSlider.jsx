@@ -38,7 +38,7 @@ const HeroSlider = () => {
             <SwiperSlide key={slide.id} className="max-h-[90vh] relative">
               <img src={slide.image} alt={`Slide${slide.id}`} />
               <div className="text_container absolute top-[30%] text-center w-full h-full">
-                <h1 className="font-bold text-5xl text-slate-800">
+                <h1 className="font-bold md:text-5xl sm:text-2xl text-xl text-slate-800">
                   {slide.title}
                 </h1>
                 <p className="text-sm italic py-3 text-gray-100">

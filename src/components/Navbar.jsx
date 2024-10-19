@@ -35,10 +35,10 @@ const Navbar = () => {
         <div className="flex-1">
           <h1 className="logo font-bold text-2xl">Furniture</h1>
         </div>
-        <div className="sm:flex-1 sm:w-auto w-full flex sm:relative z-50 sm:py-0 py-3 fixed md:bottom-auto bottom-0 sm:bg-transparent bg-white justify-center items-center">
+        <div className="sm:flex-1 sm:w-auto sm:shadow-none shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] w-full flex sm:relative z-50 sm:py-0 py-3 fixed md:bottom-auto bottom-0 sm:bg-transparent bg-white justify-center items-center">
           <ul className="flex gap-2 w-full sm:justify-center justify-around items-center">
             {navitems.map((item, index) => (
-              <li key={index} className="sm:bg-transparent bg-lime-400 sm:p-0 p-3 sm:rounded-none rounded-full">
+              <li key={index} className="sm:bg-transparent bg-lime-400 sm:shadow-none shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] sm:p-0 p-3 sm:rounded-none rounded-full">
                 <Link to={item.path}>
                   <span className="sm:block hidden">{item.label}</span>
                   <span className="sm:hidden block text-2xl">{item.icon}</span>

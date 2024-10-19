@@ -67,7 +67,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="flex sm:flex-row flex-col w-11/12 border-t border-gray-600 justify-between items-center mx-auto py-3">
+        <div className="flex sm:flex-row flex-col w-11/12 border-t sm:pb-0 pb-24 border-gray-600 justify-between items-center mx-auto py-3">
           <h4 className="flex items-center gap-2 font-semibold">
             <FaRegCopyright /> All rights reserved Furniture 2024.
           </h4>

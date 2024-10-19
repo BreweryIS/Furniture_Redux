@@ -42,7 +42,7 @@ const Wishlistoffset = () => {
           </div>
           <div className="w-full p-3">
             <ul>
-              {wishlistItems.length > 0 &&
+              {wishlistItems.length > 0 ?
                 wishlistItems.map((item) => (
                   <li
                     key={item.id}
@@ -72,7 +72,11 @@ const Wishlistoffset = () => {
                       </div>
                     </div>
                   </li>
-                ))}
+                )):(
+                  <h1 className="text-center py-3 px-2 font-semibold">
+                    Your Wishlist is Empty!
+                  </h1>
+                )}
             </ul>
           </div>
         </div>

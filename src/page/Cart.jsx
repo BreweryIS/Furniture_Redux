@@ -2,6 +2,7 @@ import React from "react";
 import { FaRegTrashCan } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart, removeFromCart, updateCart } from "../slices/cartSlice";
+import Newsletter from "../components/Newsletter";
 
 const Cart = () => {
   const CartItems = useSelector((state) => state.cart.items);
@@ -50,7 +51,7 @@ const Cart = () => {
                       value={item.quantity}
                     />
                   </td>
-                  <td className="py-3">{item.price}</td>
+                  <td className="py-3">$ {item.price}</td>
                   <td className="py-3">
                     <button
                       onClick={() => handleRemoveItem(item.id)}
@@ -92,6 +93,9 @@ const Cart = () => {
           )}
         </div>
       </div>
+      <div className="w-11/12 py-5">
+          <Newsletter />
+        </div>
     </div>
   );
 };

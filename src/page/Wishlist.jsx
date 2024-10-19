@@ -2,6 +2,7 @@ import React from "react";
 import { FaRegTrashCan } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromWishlist } from "../slices/wishlistSlice";
+import Newsletter from "../components/Newsletter";
 
 const Wishlist = () => {
   const WishlistItems = useSelector((state) => state.wishlist.items);
@@ -31,7 +32,7 @@ const Wishlist = () => {
                 <tr key={item.id} className="hover:bg-gray-300 text-center">
                   <td className="py-3">{item.id}</td>
                   <td className="py-3">{item.name}</td>
-                  <td className="py-3">{item.price}</td>
+                  <td className="py-3">$ {item.price}</td>
                   <td className="py-3">
                     <button
                       onClick={() => handleRemoveItem(item.id)}
@@ -52,6 +53,9 @@ const Wishlist = () => {
           </tbody>
         </table>
       </div>
+      <div className="w-11/12 py-5">
+          <Newsletter />
+        </div>
     </div>
   );
 };
