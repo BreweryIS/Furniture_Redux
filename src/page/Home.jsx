@@ -15,7 +15,7 @@ const Home = () => {
       </div>
       <div className="w-11/12 p-5">
         <div className="title_container p-2">
-          <h1 className="title font-bold text-3xl">
+          <h1 className="title font-bold text-xl sm:text-3xl">
             Find Your Style:Furniture Categories
           </h1>
         </div>
@@ -23,7 +23,7 @@ const Home = () => {
       </div>
       <div className="w-11/12 py-5">
         <div className="title_container py-2">
-          <h1 className="title font-bold text-3xl text-center">
+          <h1 className="title font-bold text-xl sm:text-3xl text-center">
             Discover Our FeaturedProducts
           </h1>
         </div>
@@ -34,7 +34,7 @@ const Home = () => {
       </div>
       <div className="w-11/12 py-5">
         <div className="title_container py-2">
-          <h1 className="title font-bold text-3xl text-center">
+          <h1 className="title font-bold text-xl sm:text-3xl text-center">
             Discover Our Best Seller{" "}
           </h1>
         </div>
